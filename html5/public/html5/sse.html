@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Server side event test</title>
+	</head>
+	<body>
+		<div id="result"></div>
+	</body>
+</html>
+<!-- Run top level: no sse.js, then fire events to update-stream with :8002/fire-event/:eventmsg -->
+<!-- or fire events with the cli -->
+
+<script>
+	var source=new EventSource('/update-stream');
+	source.onmessage=function(event){
+		document.getElementById('result').innerHTML+=event.data + '<br>';
+	};
+</script>

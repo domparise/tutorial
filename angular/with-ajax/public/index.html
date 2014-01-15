@@ -1,0 +1,19 @@
+<!doctype html>
+<html ng-app>
+	<head>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.6/angular.min.js"></script>
+		<script src="index.js"></script>
+	</head>
+	<body>
+		<h2>AJAX</h2>
+		<div ng-controller="Ajax">
+			<button ng-click="gets()">GET</button>
+			<button ng-click="posts()">POST</button>
+			<ul>
+				<li ng-repeat="piece in results">
+					{{piece}}
+				</li>
+			</ul>
+		</div>
+	</body>
+</html>

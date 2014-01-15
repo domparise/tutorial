@@ -1,0 +1,25 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+	<style type="text/css">
+		#div1 {width:300px;height:300px;padding:10px;border:1px solid #aaaaaa;}
+	</style>
+	<script>
+		function allowDrop(ev){
+			ev.preventDefault();
+		}
+		function drag(ev){
+			ev.dataTransfer.setData("Text",ev.target.id);
+		}
+		function drop(ev){
+			ev.preventDefault();
+			var data=ev.dataTransfer.getData("Text");
+			ev.target.appendChild(document.getElementById(data));
+		}
+	</script>
+	</head>
+	<body>
+		<div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div><br>
+		<img id="drag1" src="/img/me.jpg" draggable="true" ondragstart="drag(event)" width="300" height="300"/>
+	</body>
+</html>

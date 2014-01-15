@@ -1,0 +1,15 @@
+<html>
+	<body>
+	<button id="btn">Sup</button>
+
+		<script src="/socket.io/socket.io.js"></script>
+		<script>
+		  var socket = io.connect('http://0.0.0.0:8788');
+		  socket.on('news', function (data) {
+		    console.log(data);
+		    document.write(data.hello);
+		    socket.emit('my other event', { my: 'data' });
+		  });
+		</script>
+	</body
+</html>

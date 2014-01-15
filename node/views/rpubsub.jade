@@ -1,0 +1,19 @@
+extends layout
+
+block content
+	h1= title
+	p Welcome to #{title}
+	h3 The connection status is currently:
+	p= connectionStatus
+	p= exchangeStatus
+	p= queueStatus
+	p Please select an option:
+	form(action='/start-server', method='post')
+		input(type='submit', value='Start the server')
+	form(action='/new-exchange', method='post')
+		input(type='submit', value='Establish an exchange')
+	form(action='/new-queue', method='post')
+		input(type='submit', value='Establish a message queue')
+	if (queueStatus == 'ready' && exchangeStatus == 'ready')
+		h2 BOOM! SUCCESS!
+		a(href='/message-service') Click here to go to the messaging service!

@@ -1,0 +1,29 @@
+<!doctype html>
+<html ng-app>
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.6/angular.min.js"></script>
+    <script src="todo.js"></script>
+    <link rel="stylesheet" href="todo.css">
+  </head>
+  <body>
+    <h2>Todo</h2>
+    <div ng-controller="TodoCtrl"> <!-- this name corresponds to the function on scope in the loaded js -->
+      <span>{{remaining()}} of {{todos.length}} remaining</span> <!-- produces output of a function call as a variable, updating when called -->
+      [ <a href="" ng-click="archive()">archive</a> ] <!-- click triggers this function call, which operates on the set -->
+      <ul class="unstyled">
+        <li ng-repeat="todo in todos"> <!-- this is repeated for each value in the todos array -->
+          <input type="checkbox" ng-model="todo.done">
+          <span class="done-{{todo.done}}">{{todo.text}}</span> <!-- example of using variable in class to apply a style -->
+        </li>
+      </ul>
+      <form ng-submit="addTodo()"> <!-- submitting the form calls this function -->
+        <input type="text" ng-model="todoText"  size="30"
+               placeholder="add new todo here"> <!-- ng-model still used to bind data to our model -->
+        <input class="btn-primary" type="submit" value="add">
+      </form>
+    </div>
+    <div> <!-- because this is outside of the scope nested within the TodoCtrl controller div, this holds no value -->
+      <p>{{todos.length}}</p>
+    </div>
+  </body>
+</html>

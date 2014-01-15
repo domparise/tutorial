@@ -1,0 +1,6 @@
+/* classes are based on a variable,
+this style is only applied when a 'todo' has the 'done' key assigned to a 'true' value */
+.done-true {
+  text-decoration: line-through;
+  color: grey;
+}
