@@ -6,5 +6,6 @@ angular/  --html examples from angular.js home page
 express/  --web hosting with express.js  
 html5/  --examples of using new html5 elements  
 node/  --node modules I've worked through, mostly first examples from home pages  
+parallax/ --parallax webpage with javascript and css
 callbacks.txt  --javascript callback tutorial I'm workin on  
 jsnotes.js  --javascript scratch file I use to remember more complex javascript features    
